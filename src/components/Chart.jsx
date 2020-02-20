@@ -34,35 +34,37 @@ const Chart = ({ sparklineData }) => {
       {/* <Line type="monotone" dataKey="value" stroke="#8884d8" />
       <CartesianGrid stroke="#ccc" strokeDasharray="5 5" /> */}
       <XAxis dataKey="date" interval={2} />
-      <YAxis />
+      <YAxis dataKey="value" />
       <Tooltip contentStyle={styles.tooltipWrapper}
-                    labelStyle={styles.tooltip}
-                    formatter={value => `$${round(value, 2)}`}/>
+        labelStyle={styles.tooltip}
+        formatter={value => `$${round(value, 2)}`} />
 
       <Area
-                    type="natural"
-                    dataKey="value"
-                    stroke="none"
-                    fillOpacity={0.4}
-                    fill="#55efc4"
-                    
-                    activeDot={{ strokeWidth: 0 }}
-                />
+        type="natural"
+        dataKey="value"
+        stroke="none"
+        fillOpacity={0.6}
+        fill="#00008B"
+
+        activeDot={{ strokeWidth: 0 }}
+      />
+
+
     </AreaChart>
   );
 };
 
 const styles = {
   container: {
-      maxWidth: 700,
-      margin: "0 auto",
+    maxWidth: 700,
+    margin: "0 auto",
   },
   tooltipWrapper: {
-      background: "#444444",
-      border: "none"
+    background: "#444444",
+    border: "none"
   },
   tooltip: {
-      color: "#ebebeb"
+    color: "#ebebeb"
   }
 };
 
